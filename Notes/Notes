@@ -1,0 +1,13 @@
+Rest Assured : Java based library and it is used to automate Rest API's.
+CRUD Operation
+Create
+Retrieve
+Update
+Delete
+
+Postman : 
+how to set Envierment in Postman?
+Collection in Postman ?
+Header
+Authorization : No Auth, Basic, OAth1.0, OAuth2.0, Bearer key
+Body

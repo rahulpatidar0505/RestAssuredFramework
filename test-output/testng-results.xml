@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="2846" started-at="2020-04-05T18:14:46 IST" finished-at="2020-04-05T18:14:49 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="2846" started-at="2020-04-05T18:14:46 IST" finished-at="2020-04-05T18:14:49 IST">
+      <class name="postRequest.GoogleAPI_Add_Delete_place">
+        <test-method status="PASS" signature="add_delete_Place()[pri:0, instance:postRequest.GoogleAPI_Add_Delete_place@124c278f]" name="add_delete_Place" duration-ms="2800" started-at="2020-04-05T18:14:46 IST" finished-at="2020-04-05T18:14:49 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- add_delete_Place -->
+      </class> <!-- postRequest.GoogleAPI_Add_Delete_place -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>
