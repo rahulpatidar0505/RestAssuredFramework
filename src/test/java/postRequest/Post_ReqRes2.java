@@ -14,7 +14,7 @@ public class Post_ReqRes2 {
 	String token = null;
 	String contentType = "JSON";
 	String httpMethod = "POST";
-	String endpointURL = "/api/users";
+	String basePath = "/api/users";
 	boolean log = false;
 
 	String filepath = "C:\\Users\\rahul.patidar\\Documents\\RestAssuredFW\\RestAssuredTest\\ApplicationTestData\\APITestData.xlsx";
@@ -29,7 +29,7 @@ public class Post_ReqRes2 {
 	@Test(dataProvider = "getData")
 	public void adduser(String name, String job) {
 		User user = new User(name, job);
-		Response response = ClientRequest.doPost(baseURI, token, contentType, endpointURL, log, user);
+		Response response = ClientRequest.doPost(baseURI, token, contentType, basePath, log, user);
 		System.out.println(ClientRequest.getStatusCode(response));
 		System.out.println(ClientRequest.getBody(response));
 

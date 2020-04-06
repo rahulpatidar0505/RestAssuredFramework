@@ -12,13 +12,13 @@ public class GetCall {
 	String token = "oeU4QXetefCKNmv-5p89k6rfbtJsq1mBpnRn";
 	String contentType = "JSON";
 	String httpMethod = "GET";
-	String endpointURL = "/utilities/weather/city/Hyderabad";
+	String basePath = "/utilities/weather/city/Hyderabad";
 	boolean log = false;
 
 	@Test
 	public void getRestAPI() {
 
-		Response response = ClientRequest.doGet(baseURI, token, contentType, endpointURL, log);
+		Response response = ClientRequest.doGet(baseURI, token, contentType, basePath, log);
 		System.out.println(ClientRequest.getStatusCode(response));
 		System.out.println(ClientRequest.getAllHeaders(response));
 		System.out.println(ClientRequest.getHeaderValue(response, "Content-Type"));

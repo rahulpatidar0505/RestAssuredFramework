@@ -2,16 +2,16 @@
 <testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
   <reporter-output>
   </reporter-output>
-  <suite name="Default suite" duration-ms="2846" started-at="2020-04-05T18:14:46 IST" finished-at="2020-04-05T18:14:49 IST">
+  <suite name="Default suite" duration-ms="3376" started-at="2020-04-06T09:27:56 IST" finished-at="2020-04-06T09:27:59 IST">
     <groups>
     </groups>
-    <test name="Default test" duration-ms="2846" started-at="2020-04-05T18:14:46 IST" finished-at="2020-04-05T18:14:49 IST">
-      <class name="postRequest.GoogleAPI_Add_Delete_place">
-        <test-method status="PASS" signature="add_delete_Place()[pri:0, instance:postRequest.GoogleAPI_Add_Delete_place@124c278f]" name="add_delete_Place" duration-ms="2800" started-at="2020-04-05T18:14:46 IST" finished-at="2020-04-05T18:14:49 IST">
+    <test name="Default test" duration-ms="3376" started-at="2020-04-06T09:27:56 IST" finished-at="2020-04-06T09:27:59 IST">
+      <class name="deleteRequest.LibraryAPI_E2ETest">
+        <test-method status="PASS" signature="addBook()[pri:0, instance:deleteRequest.LibraryAPI_E2ETest@124c278f]" name="addBook" duration-ms="3330" started-at="2020-04-06T09:27:56 IST" finished-at="2020-04-06T09:27:59 IST">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- add_delete_Place -->
-      </class> <!-- postRequest.GoogleAPI_Add_Delete_place -->
+        </test-method> <!-- addBook -->
+      </class> <!-- deleteRequest.LibraryAPI_E2ETest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

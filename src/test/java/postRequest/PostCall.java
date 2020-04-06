@@ -15,14 +15,14 @@ public class PostCall {
 	String token=null;
 	String contentType = "JSON";
 	String httpMethod = "POST";
-	String endpointURL = "/customer/register";
+	String basePath = "/customer/register";
 	boolean log = false;
 	
 	@Test
 	public void postRequestAPI() {
 		
 		Customer customer = new Customer("Rahuldda", "Patdasidar", "rdsadasahul", "rahuldas@123", "rahudal@gmailcom");
-		Response response=ClientRequest.doPost(baseURI, token, contentType, endpointURL, log, customer);
+		Response response=ClientRequest.doPost(baseURI, token, contentType, basePath, log, customer);
 	
 		// Deserialization-convert Json object into Java object
 		if (response.getStatusCode() == 201) {

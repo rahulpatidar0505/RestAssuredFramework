@@ -16,13 +16,13 @@ public class GetReqRes {
 	String token = "oeU4QXetefCKNmv-5p89k6rfbtJsq1mBpnRn";
 	String contentType = "JSON";
 	String httpMethod = "GET";
-	String endpointURL = "/api/users?page=2";
+	String basePath = "/api/users?page=2";
 	boolean log = false;
 	
 	@Test
 	public void getuser() {
 		
-		Response response = ClientRequest.doGet(baseURI, token, contentType, endpointURL, log);
+		Response response = ClientRequest.doGet(baseURI, token, contentType, basePath, log);
 		System.out.println(ClientRequest.getStatusCode(response));
 		String body=ClientRequest.getBody(response);
 

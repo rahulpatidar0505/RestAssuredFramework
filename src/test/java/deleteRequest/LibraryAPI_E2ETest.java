@@ -1,4 +1,4 @@
-package postRequest;
+package deleteRequest;
 
 import org.testng.annotations.Test;
 
@@ -12,7 +12,7 @@ public class LibraryAPI_E2ETest {
 	String token = null;
 	String contentType = "JSON";
 	String httpMethod = "POST";
-	String endpointURL = "/Library/Addbook.php";
+	String basePath = "/Library/Addbook.php";
 	boolean log = false;
 
 	@Test
@@ -26,7 +26,7 @@ public class LibraryAPI_E2ETest {
 
 		Book book = new Book("ABdannsC", "asas", "657", "Tomna");
 		
-		Response response = ClientRequest.doPost(baseURI, token, contentType, endpointURL, log, book);
+		Response response = ClientRequest.doPost(baseURI, token, contentType, basePath, log, book);
 		System.out.println(ClientRequest.getStatusCode(response));
 
 		/*

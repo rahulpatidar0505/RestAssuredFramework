@@ -1,4 +1,4 @@
-package postRequest;
+package deleteRequest;
 
 import java.util.ArrayList;
 import java.util.HashMap;

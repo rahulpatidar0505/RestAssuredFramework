@@ -15,21 +15,19 @@ public class GetCall2{
 	String token = "oeU4QXetefCKNmv-5p89k6rfbtJsq1mBpnRn";
 	String contentType = "JSON";
 	String httpMethod = "GET";
-	String endpointURL = "/rest/v2/capital/Washington";
+	String basePath = "/rest/v2/capital/Washington";
 	boolean log = false;
 	
 	@Test
 	public void getRestAPI() {
 		
-		Response response = ClientRequest.doGet(baseURI, token, contentType, endpointURL, log);
+		Response response = ClientRequest.doGet(baseURI, token, contentType, basePath, log);
 		System.out.println(ClientRequest.getStatusCode(response));
-
 
 		String responseString = ClientRequest.getBody(response);
 		System.out.println("Response string is :" + responseString);
 
 		responseString = responseString.substring(1, responseString.length()-1);
-	//	responseString = responseString.substring(0, responseString.length() - 1);
 		System.out.println("actual json response string is: " + responseString);
 
 		// String to json conversion:

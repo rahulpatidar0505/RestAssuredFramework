@@ -13,44 +13,46 @@ import testutils.TestUtils;
 
 public class ClientRequest {
 
-	public static Response doGet(String baseURI, String token, String contentType, String endpointURL, boolean log) {
+	public static Response doGet(String baseURI, String token, String contentType, String basePath, boolean log) {
 
 		createBaseURI(baseURI);
 		createAuthorization(token);
-		// setAuthorization("OAuth2", null, null, null, null, null, null);
 		RequestSpecification request = createRequest(contentType, log);
-		Response response = getResponse("GET", request, endpointURL);
+		Response response = getResponse("GET", request, basePath);
 		return response;
 
 	}
 
-	public static Response doPost(String baseURI, String token, String contentType, String endpointURL, boolean log, Object obj) {
+	public static Response doPost(String baseURI, String token, String contentType, String basePath, boolean log,
+			Object obj) {
 		createBaseURI(baseURI);
-		createAuthorization(token);		
+		createAuthorization(token);
 		RequestSpecification request = createRequest(contentType, log);
-		String jsonPayload=TestUtils.getSerializedJson(obj);
+		String jsonPayload = TestUtils.getSerializedJson(obj);
 		request.body(jsonPayload);
-		Response response = getResponse("POST", request, endpointURL);
+		Response response = getResponse("POST", request, basePath);
 		return response;
 	}
 
-	public static Response doPut(String baseURI, String token, String contentType, String endpointURL, boolean log, Object obj) {
+	public static Response doPut(String baseURI, String token, String contentType, String basePath, boolean log,
+			Object obj) {
 		createBaseURI(baseURI);
-		createAuthorization(token);		
+		createAuthorization(token);
 		RequestSpecification request = createRequest(contentType, log);
-		String jsonPayload=TestUtils.getSerializedJson(obj);
+		String jsonPayload = TestUtils.getSerializedJson(obj);
 		request.body(jsonPayload);
-		Response response = getResponse("PUT", request, endpointURL);
+		Response response = getResponse("PUT", request, basePath);
 		return response;
 	}
 
-	public static Response doDelete(String baseURI, String token, String contentType, String endpointURL, boolean log, Object obj) {
+	public static Response doDelete(String baseURI, String token, String contentType, String basePath, boolean log,
+			Object obj) {
 		createBaseURI(baseURI);
-		createAuthorization(token);		
+		createAuthorization(token);
 		RequestSpecification request = createRequest(contentType, log);
-		String jsonPayload=TestUtils.getSerializedJson(obj);
+		String jsonPayload = TestUtils.getSerializedJson(obj);
 		request.body(jsonPayload);
-		Response response = getResponse("DELETE", request, endpointURL);
+		Response response = getResponse("DELETE", request, basePath);
 		return response;
 	}
 
@@ -103,26 +105,26 @@ public class ClientRequest {
 
 	}
 
-	private static Response executeAPI(String httpMethod, RequestSpecification request, String endpointURL) {
+	private static Response executeAPI(String httpMethod, RequestSpecification request, String basePath) {
 		Response response = null;
 		if (httpMethod.equalsIgnoreCase("GET")) {
-			response = request.get(endpointURL);
+			response = request.get(basePath);
 		} else if (httpMethod.equalsIgnoreCase("POST")) {
-			response = request.post(endpointURL);
+			response = request.post(basePath);
 		} else if (httpMethod.equalsIgnoreCase("PUT")) {
-			response = request.put(endpointURL);
+			response = request.put(basePath);
 		} else if (httpMethod.equalsIgnoreCase("DELETE")) {
-			response = request.delete(endpointURL);
+			response = request.delete(basePath);
 		} else {
 			System.out.println("Please select correct HTTP Method");
 		}
 		return response;
 	}
-	
-	public static Response getResponse(String httpMethod, RequestSpecification request, String endpointURL) {
-		return executeAPI(httpMethod, request, endpointURL);
+
+	public static Response getResponse(String httpMethod, RequestSpecification request, String basePath) {
+		return executeAPI(httpMethod, request, basePath);
 	}
-	
+
 	public static int getStatusCode(Response response) {
 		return response.getStatusCode();
 	}
@@ -130,11 +132,11 @@ public class ClientRequest {
 	public static String getStatusLine(Response response) {
 		return response.getStatusLine();
 	}
-	
+
 	public static String getSessionId(Response response) {
 		return response.getSessionId();
 	}
-	
+
 	public static String getHeaderValue(Response response, String headerName) {
 		return response.getHeader(headerName);
 	}

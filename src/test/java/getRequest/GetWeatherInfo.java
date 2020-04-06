@@ -23,14 +23,14 @@ public class GetWeatherInfo extends TestBase {
 	String token = null;
 	String contentType = "JSON";
 	String httpMethod = "GET";
-	String endpointURL = "/utilities/weather";
+	String basePath = "/utilities/weather";
 	boolean log = false;
 
 	@Test(dataProvider = "getData")
 	public void getDataFromExcel(String city, String HTTPMethod, String humidity, String temperature,
 			String weatherdescription, String windspeed, String winddirectiondegree) {
 
-		Response response = ClientRequest.doGet(baseURI + "/" + city, token, contentType, endpointURL, log);
+		Response response = ClientRequest.doGet(baseURI + "/" + city, token, contentType, basePath, log);
 		System.out.println(ClientRequest.getStatusCode(response));
 
 	}

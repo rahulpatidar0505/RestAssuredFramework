@@ -11,13 +11,13 @@ public class GetTest {
 	String token = "oeU4QXetefCKNmv-5p89k6rfbtJsq1mBpnRn";
 	String contentType = "JSON";
 	String httpMethod = "GET";
-	String endpointURL = "/public-api/users";
+	String basePath = "/public-api/users";
 	boolean log = false;
 
 	@Test
 	public void getTest() {
 
-		Response response=ClientRequest.doGet(baseURI, token, contentType, endpointURL, log);
+		Response response=ClientRequest.doGet(baseURI, token, contentType, basePath, log);
 		System.out.println(ClientRequest.getStatusCode(response));
 		System.out.println(ClientRequest.getAllHeaders(response));
 		System.out.println(ClientRequest.getBody(response));
