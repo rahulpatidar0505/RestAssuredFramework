@@ -30,8 +30,7 @@ public class GetReqRes {
 //		System.out.println(jsonObject.get("total"));
 		
 		JsonPath json=new JsonPath(body);
-		System.out.println(json.get("total"));
-		
+//		System.out.println(json.get("total"));
 		List<Object>js=json.getList("data");
 		for (Object value : js) {
 			System.out.println("data values are :"+value);
