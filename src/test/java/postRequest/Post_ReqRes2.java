@@ -8,6 +8,8 @@ import pojo.User;
 import restclient.ClientRequest;
 import testutils.ExcelUtils;
 
+import java.util.HashMap;
+
 public class Post_ReqRes2 {
 
 	String baseURI = "https://reqres.in";
@@ -17,21 +19,30 @@ public class Post_ReqRes2 {
 	String basePath = "/api/users";
 	boolean log = false;
 
-	String filepath = "C:\\Users\\rahul.patidar\\Documents\\RestAssuredFW\\RestAssuredTest\\ApplicationTestData\\APITestData.xlsx";
+	String filepath = "./RestAssuredFrameworkApril2020/ApplicationTestData/APITestData.xlsx";
 	String sheetname = "User";
 
-	@DataProvider
-	public Object[][] getData() {
-		Object[][] testData = ExcelUtils.getDataFromExcel(filepath,sheetname);
-		return testData;
-	}
+//	@DataProvider
+//	public Object[][] getData() {
+//		Object[][] testData = ExcelUtils.getDataFromExcel(filepath,sheetname);
+//		return testData;
+//	}
 
-	@Test(dataProvider = "getData")
-	public void adduser(String name, String job) {
-		User user = new User(name, job);
+//	@Test(dataProvider = "getData")
+//	public void adduser(String name, String job) {
+//		User user = new User(name, job);
+//		Response response = ClientRequest.doPost(baseURI, token, contentType, basePath, log, user);
+//		System.out.println(ClientRequest.getStatusCode(response));
+//		System.out.println(ClientRequest.getBody(response));
+//	}
+
+	@Test
+	public void adduser() {
+		HashMap user = new HashMap<>();
+		user.put("rahul", "qa");
+		user.put("tom", "dev");
 		Response response = ClientRequest.doPost(baseURI, token, contentType, basePath, log, user);
 		System.out.println(ClientRequest.getStatusCode(response));
 		System.out.println(ClientRequest.getBody(response));
-
 	}
 }
