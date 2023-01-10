@@ -1,4 +1,4 @@
-package deleteRequest;
+package e2eTest;
 
 import java.util.ArrayList;
 import java.util.HashMap;

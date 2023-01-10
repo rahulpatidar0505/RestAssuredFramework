@@ -1,4 +1,4 @@
-package deleteRequest;
+package e2eTest;
 
 import org.testng.annotations.Test;
 

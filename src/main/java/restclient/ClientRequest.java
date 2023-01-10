@@ -9,6 +9,7 @@ import io.restassured.http.Headers;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
+import org.json.JSONObject;
 import testutils.TestUtils;
 
 public class ClientRequest {
@@ -30,6 +31,16 @@ public class ClientRequest {
 		RequestSpecification request = createRequest(contentType, log);
 		String jsonPayload = TestUtils.getSerializedJson(obj);
 		request.body(jsonPayload);
+		Response response = getResponse("POST", request, basePath);
+		return response;
+	}
+
+	public static Response doPostUsingOrgJson(String baseURI, String token, String contentType, String basePath, boolean log,
+											  Object obj) {
+		createBaseURI(baseURI);
+		createAuthorization(token);
+		RequestSpecification request = createRequest(contentType, log);
+		request.body(obj);
 		Response response = getResponse("POST", request, basePath);
 		return response;
 	}
